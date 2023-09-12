@@ -47,13 +47,13 @@ function round(playerSelection, computerSelection) {
     }
 
     if (!playerWon && !computerWon) {
-        console.log("Draw! both played " + computerSelection);
+        return "Draw! both played " + computerSelection;
     }
     else if(playerWon) {
-        console.log("You win! " + playerSelection + " beats " + computerSelection);
+        return "You win! " + playerSelection + " beats " + computerSelection;
     }
     else {
-        console.log("You lose! " + computerSelection + " beats " + playerSelection);
+        return "You lose! " + computerSelection + " beats " + playerSelection;
     }
 }
 
