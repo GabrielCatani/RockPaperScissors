@@ -1,0 +1,16 @@
+.gameArea {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    height: 100vh;
+}
+
+.gameArea button {
+    background: blue;
+    color: white;
+    width: 25%;
+    height: 90px;
+    border: none;
+    border-radius: 15px;
+    font-size: 25px;
+}
