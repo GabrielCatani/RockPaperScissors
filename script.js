@@ -68,7 +68,17 @@ const buttons = document.querySelectorAll('button');
 
 buttons.forEach((button) => {
     button.addEventListener('click', () => {
-        console.log(playRound(button.className, getComputerChoice()));
+        const gameResult = document.querySelector('.gameResult');
+        const result = playRound(button.className, getComputerChoice());
+        const new_p = document.createElement('p');
+
+        new_p.textContent = result;
+        new_p.style.fontSize = '20px';
+        if (gameResult.hasChildNodes()) {
+            gameResult.removeChild(gameResult.firstChild);
+        }
+
+        gameResult.appendChild(new_p);
     });
 });
 

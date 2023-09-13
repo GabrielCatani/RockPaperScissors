@@ -1,16 +1,40 @@
 .gameArea {
     display: flex;
-    justify-content: space-around;
-    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    align-content: center;
+    flex-wrap: wrap;
     height: 100vh;
+    gap: 40px;
 }
 
-.gameArea button {
+.gameButtons {
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.gameResult {
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    padding: 10px;
+    border: solid black;
+    border-radius: 15px;
+    width: 70%;
+    height: 60px;
+    align-self: center;
+}
+
+button {
     background: blue;
     color: white;
-    width: 25%;
     height: 90px;
     border: none;
     border-radius: 15px;
     font-size: 25px;
+    margin: 0;
+    padding: 0;
+    width: 25%;
 }
