@@ -16,6 +16,18 @@
 }
 
 .gameResult {
+    border: solid black;
+    border-radius: 15px;
+    align-self: center;
+    width: 60%;
+    padding: 10px;
+}
+
+.gameResult h3 {
+    margin-top: 0;
+}
+
+.roundResult {
     display: flex;
     justify-content: center;
     align-content: center;

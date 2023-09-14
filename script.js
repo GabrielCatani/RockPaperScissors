@@ -64,21 +64,34 @@ function playRound(playerSelection, computerSelection) {
     }
 }
 
-const buttons = document.querySelectorAll('button');
 
-buttons.forEach((button) => {
-    button.addEventListener('click', () => {
-        const gameResult = document.querySelector('.gameResult');
-        const result = playRound(button.className, getComputerChoice());
-        const new_p = document.createElement('p');
 
-        new_p.textContent = result;
-        new_p.style.fontSize = '20px';
-        if (gameResult.hasChildNodes()) {
-            gameResult.removeChild(gameResult.firstChild);
-        }
+function game(maxRounds) {
+    const buttons = document.querySelectorAll('button');
+    let roundNbr = 0;
 
-        gameResult.appendChild(new_p);
+    buttons.forEach((button) => {
+        button.addEventListener('click', () => {
+            const roundResult = document.querySelector('.roundResult');
+            const result = playRound(button.className, getComputerChoice());
+            const new_p = document.createElement('p');
+
+            new_p.textContent = result;
+            new_p.style.fontSize = '20px';
+            if (roundResult.hasChildNodes()) {
+                roundResult.removeChild(roundResult.firstChild);
+            }
+
+            roundResult.appendChild(new_p);
+            roundNbr++;
+        
+            const rounds = document.getElementsByClassName('nbrRounds')[0];
+            rounds.innerHTML = 'Rounds: ' + roundNbr;
+            if (roundNbr >= maxRounds) {
+                rounds.innerHTML = 'End of Game';
+            }
+        });
     });
-});
+}
 
+game(5);
